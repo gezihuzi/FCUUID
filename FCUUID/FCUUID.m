@@ -148,17 +148,6 @@ NSString *const _uuidsOfUserDevicesToggleKey = @"fc_uuidsOfUserDevicesToggle";
     return _uuidForInstallation;
 }
 
-
--(NSString *)uuidForVendor
-{
-    if( _uuidForVendor == nil ){
-        _uuidForVendor = [[[[[UIDevice currentDevice] identifierForVendor] UUIDString] lowercaseString] stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    }
-    
-    return _uuidForVendor;
-}
-
-
 -(void)uuidForDevice_updateWithValue:(NSString *)value
 {
     _uuidForDevice = [NSString stringWithString:value];
@@ -410,13 +399,6 @@ NSString *const _uuidsOfUserDevicesToggleKey = @"fc_uuidsOfUserDevicesToggle";
 {
     return [[self sharedInstance] uuidForInstallation];
 }
-
-
-+(NSString *)uuidForVendor
-{
-    return [[self sharedInstance] uuidForVendor];
-}
-
 
 +(NSString *)uuidForDevice
 {
